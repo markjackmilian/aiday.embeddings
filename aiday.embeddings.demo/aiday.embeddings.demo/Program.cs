@@ -1,33 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using aiday.embeddings.demo;
+using aiday.embeddings.demo.Services;
 using aiday.embeddings.typesense;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OpenAI.Net;
 
 var services = new ServiceCollection();
-ConfigureServices(services);
+ServiceConfiguration.ConfigureServices(services);
 
 var serviceProvider = services.BuildServiceProvider();
-var config = serviceProvider.GetService<IConfiguration>();
-var test = config!.GetValue<int>("Test");
-var tt = test;
+var embeddingService = serviceProvider.GetService<IDemoEmbeddingService>();
+var embedded = await embeddingService.CreateEmbeddings("Oggi ho voglia di mangiare una pizza");
+var tt = embedded;
+// var test = config!.GetValue<int>("Test");
+// var tt = test;
 
-static void ConfigureServices(IServiceCollection services)
-{
-    IConfiguration configuration = new ConfigurationBuilder()
-        .AddUserSecrets<Program>()
-        .AddJsonFile("appsettings.json", optional: false)
-        .Build();
-            
-    services.AddSingleton<IConfiguration>(configuration);
 
-    var section = configuration.GetSection("Typesense");
-    services.AddTypesense(config =>
-    {
-        config.Node.Port = section.GetValue<string>("Port");
-        config.Node.Protocol = section.GetValue<string>("Protocol");
-        config.ApiKey = section.GetValue<string>("ApiKey");
-        config.Node.Host = section.GetValue<string>("Host");
-    } );
-}
 
