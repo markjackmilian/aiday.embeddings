@@ -1,0 +1,36 @@
+Question,Url
+What are tokens and how to count them?,https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
+What is the difference between prompt tokens and sampled tokens?,https://help.openai.com/en/articles/7127987-what-is-the-difference-between-prompt-tokens-and-sampled-tokens
+Guidance on improving latencies,https://help.openai.com/en/articles/6901266-guidance-on-improving-latencies
+Embeddings - Frequently Asked Questions,https://help.openai.com/en/articles/6824809-embeddings-frequently-asked-questions
+Where do I find my API Key?,https://help.openai.com/en/articles/4936850-where-do-i-find-my-api-key
+Incorrect API key provided,https://help.openai.com/en/articles/6882433-incorrect-api-key-provided
+How do I start exploring the API?,https://help.openai.com/en/articles/4936851-how-do-i-start-exploring-the-api
+Do the OpenAI API models have knowledge of current events?,https://help.openai.com/en/articles/6639781-do-the-openai-api-models-have-knowledge-of-current-events
+Text-to-text API,https://help.openai.com/en/collections/6863982-text-to-text-api
+GPT-V API,https://help.openai.com/en/articles/8555496-gpt-v-api
+Function Calling Updates,https://help.openai.com/en/articles/8555517-function-calling-updates
+GPT-4 Turbo,https://help.openai.com/en/articles/8555510-gpt-4-turbo
+GPT-3.5 Turbo Updates,https://help.openai.com/en/articles/8555514-gpt-3-5-turbo-updates
+ChatGPT API Transition Guide,https://help.openai.com/en/articles/7042661-chatgpt-api-transition-guide
+How can I use the ChatGPT API?,https://help.openai.com/en/articles/7232945-how-can-i-use-the-chatgpt-api
+How can I use GPT-4 with images?,https://help.openai.com/en/articles/7127995-how-can-i-use-gpt-4-with-images
+What are the GPT-4 rate limits?,https://help.openai.com/en/articles/7127986-what-are-the-gpt-4-rate-limits
+How can I access GPT-4?,https://help.openai.com/en/articles/7102672-how-can-i-access-gpt-4
+How do I use the OpenAI API in different languages?,https://help.openai.com/en/articles/6742369-how-do-i-use-the-openai-api-in-different-languages
+What is the difference between the GPT-4 models?,https://help.openai.com/en/articles/7127966-what-is-the-difference-between-the-gpt-4-models
+Prompt engineering,https://help.openai.com/en/collections/3675942-prompt-engineering
+Understanding OpenAI API Billing & Usage,https://help.openai.com/en/collections/3675945-understanding-openai-api-billing-usage
+How do I get more tokens or increase my monthly usage limits?,https://help.openai.com/en/articles/6643435-how-do-i-get-more-tokens-or-increase-my-monthly-usage-limits
+When can I expect to receive my OpenAI API invoice?,https://help.openai.com/en/articles/6640792-when-can-i-expect-to-receive-my-openai-api-invoice
+Are Playground tokens counted towards my token usage?,https://help.openai.com/en/articles/4936832-are-playground-tokens-counted-towards-my-token-usage
+How do I check my token usage?,https://help.openai.com/en/articles/6614209-how-do-i-check-my-token-usage
+Are the Moderation endpoint and content filter free to use?,https://help.openai.com/en/articles/4936833-are-the-moderation-endpoint-and-content-filter-free-to-use
+What happens after I use my free tokens or the 3-months is up in the free trial?,https://help.openai.com/en/articles/4936830-what-happens-after-i-use-my-free-tokens-or-the-3-months-is-up-in-the-free-trial
+Is there an SLA for latency guarantees on the various engines?,https://help.openai.com/en/articles/5008641-is-there-an-sla-for-latency-guarantees-on-the-various-engines
+Security and API Key Safety,https://help.openai.com/en/collections/3675944-security-and-api-key-safety
+Best Practices for API Key Safety,https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
+How to Report Security Vulnerabilities to OpenAI,https://help.openai.com/en/articles/6653653-how-to-report-security-vulnerabilities-to-openai
+Can I share my API key with my teammate/coworker?,https://help.openai.com/en/articles/5008148-can-i-share-my-api-key-with-my-teammate-coworker
+I see suspicious activity on my account - what do I do?,https://help.openai.com/en/articles/4936817-i-see-suspicious-activity-on-my-account-what-do-i-do
+How to Incorporate a UserID,https://help.openai.com/en/articles/5428082-how-to-incorporate-a-userid
