@@ -19,11 +19,15 @@ class TypeSenseFeedback : VectorsEntity
     [JsonPropertyName("text")]
     public string Text { get; set; }
 
+    [JsonPropertyName("url")]
+    public string Url { get; set; }
+
     public static List<Field> GetSchema() => new()
     {
         new("vectors", FieldType.FloatArray, false, true, 1536),
         new("text", FieldType.String),
         new("date", FieldType.Int64),
         new("id", FieldType.String),
+        new("url", FieldType.String),
     };
 }

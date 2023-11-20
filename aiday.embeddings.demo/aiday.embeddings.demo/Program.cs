@@ -15,6 +15,9 @@ var serviceProvider = services.BuildServiceProvider();
 
 var embeddingService = serviceProvider.GetService<IDemoEmbeddingService>();
 var typeSenseClient = serviceProvider.GetService<ITypesenseClient>();
+var csvService = serviceProvider.GetService<ICsvService>();
+
+var faqs = csvService.ReadCsv("openai_faq.csv");
 
 await RunnerHelper.RunAndManageException( () => typeSenseClient
     .CreateCollection(new Schema("aiday_demo", TypeSenseFeedback.GetSchema())), 
@@ -24,21 +27,29 @@ await RunnerHelper.RunAndManageException( () => typeSenseClient
         return Task.CompletedTask;
     });
 
-return;
-var embedded = await embeddingService.CreateEmbeddings("Oggi ho voglia di mangiare una pizza");
-var typeSenseFeedback = new TypeSenseFeedback
+var totalTokenCost = 0;
+foreach (var faq in faqs)
 {
-    Vectors = embedded.Embeddings,
-    Id = Guid.NewGuid().ToString("N"),
-    Date = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
-    Text = "Oggi ho voglia di mangiare una pizza",
-};
+    Console.WriteLine($"Creating embedding for: {faq.Question}");
+    var embedded = await embeddingService.CreateEmbeddings(faq.Question);
+    var typeSenseFeedback = new TypeSenseFeedback
+    {
+        Vectors = embedded.Embeddings,
+        Id = Guid.NewGuid().ToString("N"),
+        Date = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+        Text = faq.Question,
+        Url = faq.Url
+    };
+    Console.WriteLine($"Created embedding for: {faq.Question} - Token: {embedded.Tokens}");
+    totalTokenCost+= embedded.Tokens;
+    await typeSenseClient.CreateDocument("aiday_demo", typeSenseFeedback);
+    Console.WriteLine("Saved to typesense");
+}
 
-var stored = await typeSenseClient.CreateDocument("aiday_demo", typeSenseFeedback);
-var tt = stored;
+Console.WriteLine($"Total token cost: {totalTokenCost} ");
 
-// var test = config!.GetValue<int>("Test");
-// var tt = test;
+
+
 
 
 

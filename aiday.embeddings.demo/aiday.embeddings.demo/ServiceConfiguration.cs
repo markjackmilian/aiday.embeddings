@@ -28,5 +28,6 @@ static class ServiceConfiguration
     
         services.AddOpenAIServices(options => { options.ApiKey = configuration["OpenAiKey"]!; });
         services.AddSingleton<IDemoEmbeddingService, DemoEmbeddingService>();
+        services.AddSingleton<ICsvService, CsvService>();
     }
 }
