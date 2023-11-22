@@ -1,12 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using aiday.embeddings.demo;
-using aiday.embeddings.demo.Models;
-using aiday.embeddings.demo.Services;
-using aiday.embeddings.typesense;
-using aiday.embeddings.typesense.Models;
 using Microsoft.Extensions.DependencyInjection;
-using mjm.nethelpers;
 
 var services = new ServiceCollection();
 ServiceConfiguration.ConfigureServices(services);

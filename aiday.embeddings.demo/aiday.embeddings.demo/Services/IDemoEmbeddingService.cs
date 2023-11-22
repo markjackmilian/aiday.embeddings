@@ -11,19 +11,12 @@ interface IDemoEmbeddingService
     Task<EmbeddingResponse> CreateEmbeddings(string text);
 }
 
-class DemoEmbeddingService : IDemoEmbeddingService
+class DemoEmbeddingService(IOpenAIService openAiService) : IDemoEmbeddingService
 {
-    private readonly IOpenAIService _openAiService;
-   
-    public DemoEmbeddingService(IOpenAIService openAiService)
-    {
-        _openAiService = openAiService;
-    }
-    
     public async Task<EmbeddingResponse> CreateEmbeddings(string text)
     {
         var response =
-            await this._openAiService.Embeddings.Create(new EmbeddingsRequest(text,
+            await openAiService.Embeddings.Create(new EmbeddingsRequest(text,
                 "text-embedding-ada-002"));
 
         response.IsSuccess.Throw(() => throw response.Exception).IfFalse();

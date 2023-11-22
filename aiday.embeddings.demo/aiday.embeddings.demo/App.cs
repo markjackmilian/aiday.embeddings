@@ -42,7 +42,7 @@ static class App
             };
             Console.WriteLine($"Created embedding for: {faq.Question} - Token: {embedded.Tokens}");
             totalTokenCost += embedded.Tokens;
-            await typeSenseClient.CreateDocument("aiday_demo", typeSenseFeedback);
+            await typeSenseClient.CreateDocument(CollectionName, typeSenseFeedback);
             Console.WriteLine("Saved to typesense");
         }
 
@@ -68,4 +68,5 @@ static class App
         }
         
     }
+    
 }
