@@ -4,6 +4,7 @@ using CsvHelper;
 namespace aiday.embeddings.demo.Services;
 
 record Faq(string Question, string Url);
+
 interface ICsvService
 {
     Faq[] ReadCsv(string path);

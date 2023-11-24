@@ -9,7 +9,7 @@ namespace aiday.embeddings.demo;
 
 static class App
 {
-    private const string CollectionName = "aiday_demo";
+    private const string CollectionName = "aiday_demo_2";
 
     public static async Task CreateEmbeddings(ServiceProvider serviceProvider)
     {
@@ -19,13 +19,8 @@ static class App
 
         var faqs = csvService.ReadCsv("openai_faq.csv");
 
-        await RunnerHelper.RunAndManageException(() => typeSenseClient
-                .CreateCollection(new Schema(CollectionName, TypeSenseFeedback.GetSchema())),
-            exception =>
-            {
-                Console.WriteLine(exception.Message);
-                return Task.CompletedTask;
-            });
+        await typeSenseClient
+            .CreateCollection(new Schema(CollectionName, TypeSenseFeedback.GetSchema()));
 
         var totalTokenCost = 0;
         foreach (var faq in faqs)
